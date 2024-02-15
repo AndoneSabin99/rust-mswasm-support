@@ -5,3 +5,13 @@ Note: this repository is only intended as a support for initial work, not an act
 
 ## Repository structure
 For each one of these methods there is one directory that contains some files used for exploration, instructions for setting up the tools needed for the compilation and commands used for that specific method for the compilation process.
+
+```
+│
+└─── rust_mswasm
+└─── rust_cheri
+└─── rust_c
+└─── rust_wasm2c
+└─── rust_llcm-cbe
+└─── rust_cheri
+```
