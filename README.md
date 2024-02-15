@@ -13,5 +13,4 @@ For each one of these methods there is one directory that contains some files us
 └─── rust_c
 └─── rust_wasm2c
 └─── rust_llcm-cbe
-└─── rust_cheri
 ```
