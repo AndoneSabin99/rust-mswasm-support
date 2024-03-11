@@ -4,7 +4,7 @@ In this method an experimental version of Rust compiler is used for compiling Ru
 
 ## Setup
 
-Experimenting with this approach requires [this](https://github.com/kent-weak-memory/rust) speficic fork of Rust. Make sure to follow the instructions on their repository for a correct installation. The compilation process in this case has been designed as follows:
+Experimenting with this approach requires [this](https://github.com/kent-weak-memory/rust) specific fork of Rust. Make sure to follow the instructions on their repository for a correct installation. The compilation process in this case has been designed as follows:
 
 ```
 Rust -- via rustc with CHERI support --> LLVM-IR -- via clang with MS-Wasm support --> MS-Wasm
