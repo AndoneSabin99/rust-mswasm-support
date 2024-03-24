@@ -1,0 +1,120 @@
+clang version 11.0.0 (https://github.com/PLSysSec/mswasm-llvm.git 3ce7b898f4393c1cae12165151f2d6d3ddd89ee0)
+Target: wasm32-unknown-wasi
+Thread model: posix
+InstalledDir: /home/sabin/mswasm/mswasm-llvm/llvm/build/bin
+ (in-process)
+ "/home/sabin/mswasm/mswasm-llvm/llvm/build/bin/clang-11" -cc1 -triple wasm32-unknown-wasi -emit-llvm -disable-free -main-file-name boxes.c -mrelocation-model static -mframe-pointer=none -fno-rounding-math -mconstructor-aliases -target-cpu generic -fvisibility hidden -debugger-tuning=gdb -v -resource-dir /home/sabin/mswasm/mswasm-llvm/llvm/build/lib/clang/11.0.0 -isysroot /home/sabin/mswasm/mswasm-wasi-libc/sysroot -internal-isystem /home/sabin/mswasm/mswasm-llvm/llvm/build/lib/clang/11.0.0/include -internal-isystem /home/sabin/mswasm/mswasm-wasi-libc/sysroot/include/wasm32-wasi -internal-isystem /home/sabin/mswasm/mswasm-wasi-libc/sysroot/include -O1 -fdebug-compilation-dir /home/sabin/rust-mswasm-support/rust_llvm-cbe -ferror-limit 19 -fgnuc-version=4.2.1 -o boxesc.ll -x c boxes.c
+clang -cc1 version 11.0.0 based upon LLVM 11.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/home/sabin/mswasm/mswasm-wasi-libc/sysroot/include/wasm32-wasi"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/sabin/mswasm/mswasm-llvm/llvm/build/lib/clang/11.0.0/include
+ /home/sabin/mswasm/mswasm-wasi-libc/sysroot/include
+End of search list.
+boxes.c:133:76: error: 'alloc_size' attribute parameter 1 is out of bounds
+void* __rust_alloc(uint32_t _53, uint32_t _54) __ATTRIBUTELIST__((nothrow, alloc_size(0)));
+                                                                           ^          ~
+boxes.c:24:45: note: expanded from macro '__ATTRIBUTELIST__'
+#define  __ATTRIBUTELIST__(x) __attribute__(x)
+                                            ^
+boxes.c:134:83: error: 'alloc_size' attribute parameter 1 is out of bounds
+void* __rust_alloc_zeroed(uint32_t _55, uint32_t _56) __ATTRIBUTELIST__((nothrow, alloc_size(0)));
+                                                                                  ^          ~
+boxes.c:24:45: note: expanded from macro '__ATTRIBUTELIST__'
+#define  __ATTRIBUTELIST__(x) __attribute__(x)
+                                            ^
+boxes.c:144:115: warning: initializing 'void *' with an expression of type 'const struct l_unnamed_4 *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+static const __PREFIXALIGN__(4) struct l_unnamed_5 alloc_4f935b52509c9109dcadbf4236f20dd9 __POSTFIXALIGN__(4) = { (&alloc_618cf91eca10cc36ac98c66c3d77169c), { "\x08\x00\x00\x00\x05\x00\x00\x00\r\x00\x00" } };
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+boxes.c:178:76: warning: passing 'const struct l_unnamed_3 *' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  _1 = _ZN3std2rt19lang_start_internal17he26dd9e71170290bE((&llvm_cbe__8), (&vtable_OC_0), llvm_cbe_argc, llvm_cbe_argv, llvm_cbe_sigpipe);
+                                                                           ^~~~~~~~~~~~~~
+boxes.c:131:79: note: passing argument to parameter '_47' here
+uint32_t _ZN3std2rt19lang_start_internal17he26dd9e71170290bE(void* _46, void* _47, uint32_t _48, void* _49, uint8_t _50) __ATTRIBUTELIST__((nothrow));
+                                                                              ^
+boxes.c:268:38: warning: cast to smaller integer type 'uintptr_t' (aka 'unsigned long') from 'void *' [-Wvoid-pointer-to-int-cast]
+  if (((llvm_select_u32(((((uint32_t)(uintptr_t)_9)) == 0u), 1, 0)) == 0u)) {
+                                     ^~~~~~~~~~~~~
+boxes.c:359:22: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((llvm_cbe_size == 0u)) {
+       ~~~~~~~~~~~~~~^~~~~
+boxes.c:359:22: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((llvm_cbe_size == 0u)) {
+      ~              ^    ~
+boxes.c:359:22: note: use '=' to turn this equality comparison into an assignment
+  if ((llvm_cbe_size == 0u)) {
+                     ^~
+                     =
+boxes.c:370:21: warning: cast to 'void *' from smaller integer type 'uintptr_t' (aka 'unsigned long') [-Wint-to-void-pointer-cast]
+  llvm_cbe_data = (((void*)(uintptr_t)llvm_cbe__23));
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+boxes.c:377:36: error: no member named 'field1' in 'struct l_struct_core_KD__KD_ptr_KD__KD_metadata_KD__KD_PtrRepr_MD__LF_u8_NF__OD_'; did you mean 'field0'?
+  *(uint32_t*)(((&(&llvm_cbe__33)->field1))) = _16;
+                                   ^~~~~~
+                                   field0
+boxes.c:64:29: note: 'field0' declared here
+  struct l_array_2_uint32_t field0;
+                            ^
+boxes.c:379:56: error: no member named 'field1' in 'struct l_struct_core_KD__KD_ptr_KD__KD_metadata_KD__KD_PtrRepr_MD__LF_u8_NF__OD_'; did you mean 'field0'?
+  llvm_cbe_ptr_2e_1 = *(uint32_t*)(((&(&llvm_cbe__33)->field1)));
+                                                       ^~~~~~
+                                                       field0
+boxes.c:64:29: note: 'field0' declared here
+  struct l_array_2_uint32_t field0;
+                            ^
+boxes.c:436:20: warning: cast to smaller integer type 'uintptr_t' (aka 'unsigned long') from 'void *' [-Wvoid-pointer-to-int-cast]
+  if (((((uint32_t)(uintptr_t)llvm_cbe_ptr8)) == 0u)) {
+                   ^~~~~~~~~~~~~~~~~~~~~~~~
+boxes.c:454:38: warning: cast to smaller integer type 'uintptr_t' (aka 'unsigned long') from 'void *' [-Wvoid-pointer-to-int-cast]
+  if (((llvm_select_u32(((((uint32_t)(uintptr_t)_31)) == 0u), 0, 1)) == 0u)) {
+                                     ^~~~~~~~~~~~~~
+boxes.c:471:38: warning: cast to smaller integer type 'uintptr_t' (aka 'unsigned long') from 'void *' [-Wvoid-pointer-to-int-cast]
+  if (((llvm_select_u32(((((uint32_t)(uintptr_t)_32)) == 0u), 1, 0)) == 0u)) {
+                                     ^~~~~~~~~~~~~~
+boxes.c:488:38: warning: cast to smaller integer type 'uintptr_t' (aka 'unsigned long') from 'void *' [-Wvoid-pointer-to-int-cast]
+  if (((llvm_select_u32(((((uint32_t)(uintptr_t)_33)) == 0u), 1, 0)) == 0u)) {
+                                     ^~~~~~~~~~~~~~
+boxes.c:501:36: error: no member named 'field1' in 'struct l_struct_core_KD__KD_ptr_KD__KD_metadata_KD__KD_PtrRepr_MD__LF_u8_NF__OD_'; did you mean 'field0'?
+  *(uint32_t*)(((&(&llvm_cbe__75)->field1))) = _35;
+                                   ^~~~~~
+                                   field0
+boxes.c:64:29: note: 'field0' declared here
+  struct l_array_2_uint32_t field0;
+                            ^
+boxes.c:503:58: error: no member named 'field1' in 'struct l_struct_core_KD__KD_ptr_KD__KD_metadata_KD__KD_PtrRepr_MD__LF_u8_NF__OD_'; did you mean 'field0'?
+  llvm_cbe_ptr_2e_112 = *(uint32_t*)(((&(&llvm_cbe__75)->field1)));
+                                                         ^~~~~~
+                                                         field0
+boxes.c:64:29: note: 'field0' declared here
+  struct l_array_2_uint32_t field0;
+                            ^
+boxes.c:534:20: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((llvm_cbe__4 == 0u)) {
+       ~~~~~~~~~~~~^~~~~
+boxes.c:534:20: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((llvm_cbe__4 == 0u)) {
+      ~            ^    ~
+boxes.c:534:20: note: use '=' to turn this equality comparison into an assignment
+  if ((llvm_cbe__4 == 0u)) {
+                   ^~
+                   =
+boxes.c:586:20: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  if ((llvm_cbe__5 == 0u)) {
+       ~~~~~~~~~~~~^~~~~
+boxes.c:586:20: note: remove extraneous parentheses around the comparison to silence this warning
+  if ((llvm_cbe__5 == 0u)) {
+      ~            ^    ~
+boxes.c:586:20: note: use '=' to turn this equality comparison into an assignment
+  if ((llvm_cbe__5 == 0u)) {
+                   ^~
+                   =
+boxes.c:623:28: warning: cast to smaller integer type 'uintptr_t' (aka 'unsigned long') from 'void *' [-Wvoid-pointer-to-int-cast]
+  llvm_cbe__5 = ((uint32_t)(uintptr_t)llvm_cbe__3);
+                           ^~~~~~~~~~~~~~~~~~~~~~
+boxes.c:635:96: warning: passing 'const struct l_unnamed_5 *' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  _ZN4core9panicking36panic_misaligned_pointer_dereference17ha682d3503e09b4c6E(4, llvm_cbe__5, (&alloc_4f935b52509c9109dcadbf4236f20dd9));
+                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+boxes.c:136:128: note: passing argument to parameter '_62' here
+__noreturn void _ZN4core9panicking36panic_misaligned_pointer_dereference17ha682d3503e09b4c6E(uint32_t _60, uint32_t _61, void* _62) __ATTRIBUTELIST__((cold, noinline, nothrow));
+                                                                                                                               ^
+13 warnings and 6 errors generated.

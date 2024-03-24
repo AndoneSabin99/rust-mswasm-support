@@ -13,11 +13,11 @@ pub extern "C" fn __original_main() -> i32 {
     let array = [1, 2, 3, 4, 5, 6];
     let mut sum = sum(&array);
     //sum += array[6];
-    //sum += *array.get_unchecked(6);
-
+    
     unsafe{
-        // Unsafe access to the element at index 6 without bounds checking
-        sum += *array.get_unchecked(123);
+        // Unsafe access to the element at index 6 
+        // without bounds checking
+        sum += *array.get_unchecked(6);
     }
     sum
 } 

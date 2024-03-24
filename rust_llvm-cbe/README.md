@@ -17,5 +17,5 @@ First, compile Rust code into LLVM-IR, then convert it into C with llvm-cbe. Fro
 ```
 rustc --emit=llvm-ir <filename>.rs -o <filename>.ll --target=wasm32-wasi -C opt-level=3
 llvm-cbe <filename>.ll -o <filename>
-clang -O3 --target=wasm32-wasi --sysroot=<mswasm-wasi-libc/sysroot_path> <filename>.ll -o <filename>.wasm
+clang -O3 --target=wasm32-wasi --sysroot=<mswasm-wasi-libc/sysroot_path> <filename>.c -o <filename>.wasm
 ```
