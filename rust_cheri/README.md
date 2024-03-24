@@ -12,7 +12,7 @@ Rust -- via rustc with CHERI support --> LLVM-IR -- via clang with MS-Wasm suppo
 
 ## Compiling and Executing
 
-First, compile Rust code into LLVM-IR with target aarch64-unknown-freebsd-purecap, after that take the generated .ll file and with Clang with MS-Wasm support generate the MS-Wasm binary file. Note: this method is not guaranteed to work. In fact, all examples here cannot generate an executable due to issues.
+First, compile Rust code into LLVM-IR with target aarch64-unknown-freebsd-purecap, after that take the generated .ll file and with Clang with MS-Wasm support generate the MS-Wasm binary file. Note: this method is not guaranteed to work. In fact, all examples used with this approach cannot generate an executable due to issues.
 
 ```
 rustc --emit=llvm-ir <filename>.rs -o <filename>.ll --target aarch64-unknown-freebsd-purecap -C linker=<linker_path>
