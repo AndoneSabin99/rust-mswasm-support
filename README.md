@@ -3,8 +3,10 @@ This repository contains some Rust source code files which have been used for ex
 
 Note: this repository is only intended to be a support for initial work, not an actual complete implementation of Rust with MS-Wasm support!
 
+## Setup
+This work has been realized inside an Ubuntu 22.04.3 LTS distro on WSL. Thus, it is recommended to use either a Linux OS or a Linux distro for WSL, in the case it is desired to use a Windows OS. Other platforms, like MAC OS, have not been used, so it is not guaranteed that what is written in this repository also applies to these other platforms.
 
-## Toolchain
+## Toolchains
 Compiling Rust to MS-Wasm requires some tools to be installed on the machine. First of all, it is necessary to acquire a Rust compiler with `wasm32-wasi` target installed. This can be achieved by either using [rustup](https://rustup.rs/) or building the Rust compiler by following the instructions on the official [Rust project repository](https://github.com/rust-lang/rust). The only method that instead uses another fork of Rust is the second method, which uses a fork of the Rust compiler with CHERI support (see that directory instructions for more details). Once installed the Rust compiler, install the following tools:
 
 * [mswasm-llvm](https://github.com/PLSysSec/mswasm-llvm): source code for the compiler from C to MS-Wasm bytecode. It is an extension of the [CHERI fork of LLVM](https://github.com/CTSRD-CHERI/llvm-project) with modifications to produce MSWasm bytecode. Since we want to generate MS-Wasm bytecode from Rust code, this Clang compiler is used as a linker.
