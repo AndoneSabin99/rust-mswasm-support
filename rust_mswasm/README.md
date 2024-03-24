@@ -18,6 +18,7 @@ rustflags = [
 ]
 ```
 
+Note: bugs might arise when using high optimization levels, especially `opt-level=3`! It is better to use a lower optimization level, especially when a much more complete and stable Rust-to-MS-Wasm toolchain will be developed in the future.
 
 ## Compiling and Executing
 
