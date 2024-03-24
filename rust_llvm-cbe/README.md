@@ -4,7 +4,7 @@ This method attempts in compiling Rust code into MS-Wasm using C as an intermedi
 
 ## Setup
 
-Experimenting with this approach requires llvm-cbe to be installed. Any Rust compiler can be used to obtain an LLVM-IR file. The compilation process is the following:
+Experimenting with this approach requires llvm-cbe to be installed. See the [llvm-cbe repository](https://github.com/JuliaHubOSS/llvm-cbe) for installation instructions. Any Rust compiler can be used to obtain an LLVM-IR file. The compilation process is the following:
 
 ```
 Rust -- via rustc --> LLVM-IR -- via llvm-cbe --> C -- via clang with MS-Wasm support --> MS-Wasm
