@@ -1,0 +1,1 @@
+/home/sabin/mswasm/rWasm/output-hello/target/release/sandboxed-hello-wasi: /home/sabin/mswasm/rWasm/output-hello/src/guest_mem_wrapper.rs /home/sabin/mswasm/rWasm/output-hello/src/lib.rs /home/sabin/mswasm/rWasm/output-hello/src/main.rs

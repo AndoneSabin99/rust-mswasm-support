@@ -1,0 +1,118 @@
+// WARNING: This output format is intended for human consumers only
+// and is subject to change without notice. Knock yourself out.
+fn main() -> () {
+    let mut _0: ();                      // return place in scope 0 at for.rs:1:10: 1:10
+    let mut _1: [i32; 3];                // in scope 0 at for.rs:2:9: 2:20
+    let mut _2: std::ops::Range<usize>;  // in scope 0 at for.rs:3:18: 3:34
+    let mut _3: std::ops::Range<usize>;  // in scope 0 at for.rs:3:18: 3:34
+    let mut _4: usize;                   // in scope 0 at for.rs:3:21: 3:34
+    let mut _5: &[i32];                  // in scope 0 at for.rs:3:21: 3:28
+    let mut _6: &[i32; 3];               // in scope 0 at for.rs:3:21: 3:28
+    let mut _9: std::option::Option<usize>; // in scope 0 at for.rs:3:18: 3:34
+    let mut _10: &mut std::ops::Range<usize>; // in scope 0 at for.rs:3:18: 3:34
+    let mut _11: &mut std::ops::Range<usize>; // in scope 0 at for.rs:3:18: 3:34
+    let mut _12: isize;                  // in scope 0 at for.rs:3:9: 3:14
+    let mut _14: usize;                  // in scope 0 at for.rs:3:9: 3:14
+    let _17: usize;                      // in scope 0 at for.rs:4:30: 4:35
+    let mut _18: usize;                  // in scope 0 at for.rs:4:22: 4:36
+    let mut _19: bool;                   // in scope 0 at for.rs:4:22: 4:36
+    let mut _20: i32;                    // in scope 0 at for.rs:5:26: 5:32
+    let mut _21: (i32, bool);            // in scope 0 at for.rs:5:26: 5:36
+    let _22: usize;                      // in scope 0 at for.rs:5:17: 5:22
+    let mut _23: usize;                  // in scope 0 at for.rs:5:9: 5:23
+    let mut _24: bool;                   // in scope 0 at for.rs:5:9: 5:23
+    scope 1 {
+        debug numbers => _1;             // in scope 1 at for.rs:2:9: 2:20
+        let mut _7: std::ops::Range<usize>; // in scope 1 at for.rs:3:18: 3:34
+        scope 2 {
+            debug iter => _7;            // in scope 2 at for.rs:3:18: 3:34
+            let mut _8: usize;           // in scope 2 at for.rs:3:18: 3:34
+            scope 3 {
+                debug __next => _8;      // in scope 3 at for.rs:3:18: 3:34
+                let _13: usize;          // in scope 3 at for.rs:3:9: 3:14
+                let _15: usize;          // in scope 3 at for.rs:3:9: 3:14
+                scope 4 {
+                    debug val => _13;    // in scope 4 at for.rs:3:9: 3:14
+                }
+                scope 5 {
+                    debug index => _15;  // in scope 5 at for.rs:3:9: 3:14
+                    let _16: i32;        // in scope 5 at for.rs:4:13: 4:19
+                    scope 6 {
+                        debug number => _16; // in scope 6 at for.rs:4:13: 4:19
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        _1 = [const 1_i32, const 2_i32, const 3_i32]; // scope 0 at for.rs:2:23: 2:32
+        _6 = &_1;                        // scope 1 at for.rs:3:21: 3:28
+        _5 = move _6 as &[i32] (Pointer(Unsize)); // scope 1 at for.rs:3:21: 3:28
+        _4 = Len((*_5));                 // scope 1 at for.rs:3:21: 3:34
+        (_3.0: usize) = const 0_usize;   // scope 1 at for.rs:3:18: 3:34
+        (_3.1: usize) = move _4;         // scope 1 at for.rs:3:18: 3:34
+        _2 = <std::ops::Range<usize> as IntoIterator>::into_iter(move _3) -> bb1; // scope 1 at for.rs:3:18: 3:34
+                                         // mir::Constant
+                                         // + span: for.rs:3:18: 3:34
+                                         // + literal: Const { ty: fn(std::ops::Range<usize>) -> <std::ops::Range<usize> as std::iter::IntoIterator>::IntoIter {<std::ops::Range<usize> as std::iter::IntoIterator>::into_iter}, val: Value(Scalar(<ZST>)) }
+    }
+
+    bb1: {
+        _7 = move _2;                    // scope 1 at for.rs:3:18: 3:34
+        goto -> bb2;                     // scope 2 at for.rs:3:5: 6:6
+    }
+
+    bb2: {
+        _11 = &mut _7;                   // scope 3 at for.rs:3:18: 3:34
+        _10 = &mut (*_11);               // scope 3 at for.rs:3:18: 3:34
+        _9 = <std::ops::Range<usize> as Iterator>::next(move _10) -> bb3; // scope 3 at for.rs:3:18: 3:34
+                                         // mir::Constant
+                                         // + span: for.rs:3:18: 3:34
+                                         // + literal: Const { ty: for<'r> fn(&'r mut std::ops::Range<usize>) -> std::option::Option<<std::ops::Range<usize> as std::iter::Iterator>::Item> {<std::ops::Range<usize> as std::iter::Iterator>::next}, val: Value(Scalar(<ZST>)) }
+    }
+
+    bb3: {
+        _12 = discriminant(_9);          // scope 3 at for.rs:3:9: 3:14
+        switchInt(move _12) -> [0_isize: bb4, 1_isize: bb6, otherwise: bb5]; // scope 3 at for.rs:3:9: 3:14
+    }
+
+    bb4: {
+        _0 = const ();                   // scope 3 at for.rs:3:5: 6:6
+        return;                          // scope 0 at for.rs:7:3: 7:3
+    }
+
+    bb5: {
+        unreachable;                     // scope 3 at for.rs:3:18: 3:34
+    }
+
+    bb6: {
+        _13 = ((_9 as Some).0: usize);   // scope 3 at for.rs:3:9: 3:14
+        _14 = _13;                       // scope 4 at for.rs:3:9: 3:14
+        _8 = move _14;                   // scope 4 at for.rs:3:9: 3:14
+        _15 = _8;                        // scope 3 at for.rs:3:18: 3:34
+        _17 = _15;                       // scope 5 at for.rs:4:30: 4:35
+        _18 = const 3_usize;             // scope 5 at for.rs:4:22: 4:36
+        _19 = Lt(_17, _18);              // scope 5 at for.rs:4:22: 4:36
+        assert(move _19, "index out of bounds: the length is {} but the index is {}", move _18, _17) -> bb7; // scope 5 at for.rs:4:22: 4:36
+    }
+
+    bb7: {
+        _16 = _1[_17];                   // scope 5 at for.rs:4:22: 4:36
+        _20 = _16;                       // scope 6 at for.rs:5:26: 5:32
+        _21 = CheckedMul(_20, const 2_i32); // scope 6 at for.rs:5:26: 5:36
+        assert(!move (_21.1: bool), "attempt to compute `{} * {}`, which would overflow", move _20, const 2_i32) -> bb8; // scope 6 at for.rs:5:26: 5:36
+    }
+
+    bb8: {
+        _22 = _15;                       // scope 6 at for.rs:5:17: 5:22
+        _23 = const 3_usize;             // scope 6 at for.rs:5:9: 5:23
+        _24 = Lt(_22, _23);              // scope 6 at for.rs:5:9: 5:23
+        assert(move _24, "index out of bounds: the length is {} but the index is {}", move _23, _22) -> bb9; // scope 6 at for.rs:5:9: 5:23
+    }
+
+    bb9: {
+        _1[_22] = move (_21.0: i32);     // scope 6 at for.rs:5:9: 5:36
+        goto -> bb2;                     // scope 2 at for.rs:3:5: 6:6
+    }
+}

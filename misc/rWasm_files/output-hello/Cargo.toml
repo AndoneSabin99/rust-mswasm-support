@@ -1,0 +1,16 @@
+
+[package]
+name = "sandboxed-hello-wasi"
+version = "1.0.0+mswasm"
+authors = ["generated-by-rwasm-1.0.0+mswasm"]
+edition = "2018"
+
+[dependencies]
+wasi-common = "0.20.0"
+wiggle = "0.20.0"
+
+[profile.release]
+debug = true
+
+
+            

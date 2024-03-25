@@ -1,0 +1,2 @@
+cargo:wasi=/home/sabin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasi-common-0.20.0/WASI
+cargo:rustc-env=WASI_ROOT=/home/sabin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasi-common-0.20.0/WASI

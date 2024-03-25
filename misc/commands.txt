@@ -1,0 +1,58 @@
+    *	rustc --emit=mir first_file.rs 			//obtain MIR
+
+	*	rustc --emit=llvm-ir first_file.rs 		//obtain LLVM-IR (non CHERI)
+
+	*	rustc -Z unpretty=mir-cfg variables.rs		//obtain the .dot graph in the terminal
+
+	*	rustc -Z unpretty=mir-cfg variables.rs > graph.txt	//save the .dot graph in a txt file
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+C -> MS-Wasm
+
+    *	C -> LLVM-IR
+
+	*	/home/sabin/mswasm/mswasm-llvm/llvm/build/bin/clang -O1 -S -emit-llvm --target=wasm32-wasi --sysroot=/home/sabin/mswasm/mswasm-wasi-libc/sysroot hello.c -o hello.ll
+
+	*	LLVM-IR -> MS-Wasm
+
+	*	/home/sabin/mswasm/mswasm-llvm/llvm/build/bin/clang -O1 --target=wasm32-wasi --sysroot=/home/sabin/mswasm/mswasm-wasi-libc/sysroot hello.ll -o hello.wasm
+
+	*	MS-Wasm -> WAT	(optional)
+
+	*	/home/sabin/mswasm/mswasm-wabt/bin/wasm2wat hello.wasm -o hello.wat
+
+    *   MS-Wasm -> executable with rWasm (execute this command inside rWasm directory, see rWasm repository for more details)
+
+	*	cargo run -- -w --ms-wasm-no-tags examples/hello.wasm output
+
+	*	cd output
+
+	*	cargo run --release 
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+RUST =====> CHERI LLVM
+
+	*	obtain llvm-ir with morello target
+
+	*	rustc --emit=llvm-ir src/main.rs -o main_morello_purecap.ll --target aarch64-unknown-freebsd-purecap -C linker=/home/sabin/cheri/rust/clang-morello.sh
+
+	*	obtain mir with morello target
+	
+	*	rustc --emit=mir src/main.rs -o main_morello_purecap.mir --target aarch64-unknown-freebsd-purecap -C linker=/home/sabin/cheri/rust/clang-morello.sh
+
+	*	Command for printing .wat files even with errors (for debugging purposes)
+
+	*	/home/sabin/mswasm/mswasm-wabt/bin/wasm2wat hello.wasm -o hello.wat --verbose
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+Rust ==> MS-Wasm 
+
+	*	Compile the smallest no_std file for MS-Wasm with only core:
+
+		cargo build -Zbuild-std=core --target wasm32-wasi --release

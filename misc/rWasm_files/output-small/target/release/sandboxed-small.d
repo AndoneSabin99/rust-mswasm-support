@@ -1,0 +1,1 @@
+/home/sabin/mswasm/rWasm/output-small/target/release/sandboxed-small: /home/sabin/mswasm/rWasm/output-small/src/guest_mem_wrapper.rs /home/sabin/mswasm/rWasm/output-small/src/lib.rs /home/sabin/mswasm/rWasm/output-small/src/main.rs

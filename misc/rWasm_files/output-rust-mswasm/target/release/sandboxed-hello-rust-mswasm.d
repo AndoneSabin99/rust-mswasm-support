@@ -1,0 +1,1 @@
+/home/sabin/mswasm/rWasm/output-rust-mswasm/target/release/sandboxed-hello-rust-mswasm: /home/sabin/mswasm/rWasm/output-rust-mswasm/src/guest_mem_wrapper.rs /home/sabin/mswasm/rWasm/output-rust-mswasm/src/main.rs
